@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/core/routes/route_name.dart';
 import 'package:food/core/theme/app_colors.dart';
 import 'package:food/widgets/food_card.dart';
 import 'package:get/get.dart';
@@ -88,7 +89,11 @@ class HomeScreen extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: 10,
                   itemBuilder: (context, index) {
-                    return const FoodCard();
+                    return FoodCard(
+                      onTap: () {
+                        Get.toNamed(RouteName.menu);
+                      },
+                    );
                   },
                 ),
               ),

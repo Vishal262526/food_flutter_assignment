@@ -3,13 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:food/core/theme/app_colors.dart';
 
 class FoodCard extends StatelessWidget {
-  const FoodCard({super.key});
+  final VoidCallback onTap;
+  const FoodCard({
+    super.key,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 8.0),
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.only(bottom: 8.0),
+      decoration: const BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.all(
           Radius.circular(20.0),
@@ -129,10 +133,13 @@ class FoodCard extends StatelessWidget {
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () {},
-                      child: Row(
+                      onPressed: onTap,
+                      child: const Row(
                         children: [
-                          Text("Customize"),
+                          Text(
+                            "Customize",
+                            style: TextStyle(fontSize: 10),
+                          ),
                           Icon(
                             Icons.arrow_forward,
                             size: 20,

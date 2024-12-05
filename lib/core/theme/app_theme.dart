@@ -20,6 +20,16 @@ class AppTheme {
         iconColor: AppColors.white,
       ),
     ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        foregroundColor: AppColors.primary,
+        iconColor: AppColors.primary,
+      ),
+    ),
     primaryColor: AppColors.primary,
   );
 }
